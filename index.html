@@ -1,0 +1,45 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+	<title>CoffeeMaker</title>
+</head>
+<body>
+
+<h1>CoffeeMaker</h1>
+<p>Create your own coffee</p>
+<!--- Checkbox to enable configuration for custom beverage --->
+<input id="customCoffee" type="checkbox" value="true" >
+<label for="customCoffee">Custom beverage</label>
+<!--- Custom beverage form --->
+
+<!--- Selection of beverage --->
+<div id="wrapper">
+<div id="panel">
+<div id="customCoffeeForm">
+<input id="numInput" type="text" placeholder="amount">
+<div class="add">Add</div>
+</div>
+<div id="choices">
+	<div class="btn watter">Watter</div>
+	<div class="btn coffee">Coffee</div>
+	<div class="btn chocolate">Chocolate</div>
+	<div class="btn blkTea">Black Tea</div>
+	<div class="btn grnTea">Green Tea</div>
+	<div class="btn milk">Milk</div>
+	<div id="reset">Reset</div>
+	<div id="confirm">Confirm</div>
+</div>
+
+<div id="result"></div>
+</div>
+
+<!--- Display of beverage --->
+<div id="coffeeMachine">
+	<div id="cup">
+	</div>
+</div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>  

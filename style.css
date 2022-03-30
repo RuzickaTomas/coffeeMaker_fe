@@ -1,0 +1,246 @@
+
+* {
+font-family: sans-serif;
+color: #5a5a5a;
+}
+
+
+#customCoffeeForm {
+	width: 200px;
+	display: flex;
+	justify-content: row;
+	align-content: center;
+}
+
+#numInput {
+	padding: 5px;
+	position: relative;
+	height: 30px;
+	display: none;
+	top: 3px;
+}
+
+.add {
+	cursor: pointer;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	height: 20px;
+	margin: 5px;
+	padding: 10px;
+	background-color: #0066ff;
+	color: white;
+	box-shadow: 0 5px 10px #ababab;
+}
+
+.add:hover {
+box-shadow: inset 0 5px 10px #0044ff;
+	transition-delay: 0.2s;
+}
+
+#wrapper {
+ 	display: flex;
+ 	width: 100%;
+ 	height: 30%;
+}
+
+#panel {
+	padding: 5px;
+}
+/*---------------- ingredients of beverage ----------------*/
+
+#choices {
+	display: inline-grid;
+ 	grid-template-columns: auto auto;
+	height: 70%;
+}
+
+.btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	height: 20px;
+	margin: 5px;
+	padding: 10px;
+	cursor: pointer;
+	box-shadow: 0 0 10px 0 #ababab;
+}
+
+.btn:hover {
+	transition-delay: 0.2s;
+}
+
+.watter {
+	background-color: azure;
+
+}
+
+.watter:hover {
+	box-shadow: inset 0 0 10px 0 #e0eeee;
+}
+
+.coffee {
+	background-color: #6f4e37;
+	color: white;
+}
+
+.coffee:hover {
+	box-shadow: inset 0 0 10px 0 #5e3d26;
+}
+
+.blkTea {
+	background-color: #6f3758;
+	color: white;
+}
+
+.blkTea:hover {
+	box-shadow: inset 0 0 10px 0 #5e2647;
+}
+
+.grnTea {
+	background-color: #586f37;
+	color: white;
+}
+
+.grnTea:hover {
+	box-shadow: inset 0 0 10px 0 #475e26;
+}
+
+.chocolate {
+	background-color: #552b00;
+	color: white;
+}
+
+.chocolate:hover {
+	box-shadow: inset 0 0 10px 0 #441a00;
+}
+
+.milk {
+	box-shadow: 0 0 10px 0 #ababab;
+}
+
+.milk:hover {
+	box-shadow: inset 0 0 10px 0 #f5f5f5;
+}
+
+/*---------------- action buttons ----------------*/
+#reset {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	height: 20px;
+	margin: 5px;
+	padding: 10px;
+	margin-top: 5px;
+	background-color: #9e0000;
+	color: white;
+	box-shadow: 0 0 10px 0 #ababab;
+	cursor: pointer;
+}
+
+#reset:hover {
+	box-shadow: inset 0 0 10px 0 #8d0000;
+}
+
+#confirm {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	height: 20px;
+	margin: 5px;
+	padding: 10px;
+	margin-top: 5px;
+	background-color: #0066ff;
+	box-shadow: 0 0 10px 0 #ababab;
+	cursor: pointer;
+	color: white;
+}
+
+#confirm:hover {
+	box-shadow: inset 0 0 10px 0 #0044ff;
+}
+
+
+#result {
+	display: none;
+	padding: 10px;
+	background-color: lightgray;
+	width: 240px;
+}
+
+/*---------------- machine visualisation ----------------*/
+
+#coffeeMachine {
+	width: 600px;
+	height: 300px;
+	box-shadow: inset 3px -5px 0 0 lightgray;
+	position: relative;
+}
+
+#cup {
+	position: absolute;
+	width: 300px;
+	height: 270px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 0 0 75px 75px;
+	box-shadow: inset  5px -7px 10px 0 #ababab;
+}
+
+#cup:after {
+	position: absolute;
+	top: 8%;
+	right: -25%;
+	transform: translate(-8%, 25%);
+	content: "";
+	width:50px;
+	height: 100px;
+	border: 20px solid #ababab;
+	border-left: 0px;
+	border-radius: 0 80px 100px 0;
+}
+
+#infusion {
+	position: absolute;
+	bottom: 5%;
+	left: 50%;
+	transform: translate(-50%, 5%);
+	padding-bottom: 10%;
+	width: 83%;
+	border-radius: 0 0 150px 150px;
+	height: 15%;
+	color: white;
+	padding:5%;
+	text-align: center;
+	background-color: transparent;
+}
+
+#liquid {
+	position: absolute;
+	bottom: 60%;
+	left: 50%;
+	transform: translate(-50%, 60%);
+	width: 83%;
+	height: 35%;
+	background-color: azure;
+	padding:5%;
+	text-align: center;
+}
+
+#milkIngredient {
+	position: absolute;
+	top: 1%;
+	left: 50%;
+	transform: translate(-50%, -1%);
+	width: 83%;
+	height: 5%;
+	color: black;
+	background-color: white;
+	padding:5%;
+	text-align: center;
+}
