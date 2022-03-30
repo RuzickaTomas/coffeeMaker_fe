@@ -1,4 +1,4 @@
-# kcdata_test_fe
+# coffeeMaker_fe
 Frontend application that displays random facts about dogs.
 
 #Requirements
