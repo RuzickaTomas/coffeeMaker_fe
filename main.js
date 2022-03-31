@@ -70,7 +70,9 @@ document.getElementById("reset").onclick = function () {
 	beverage.infusion.amount = 0;
 	beverage.watter.amount = 0;
 	beverage.milk.amount = 0;
+	//while cup contains anything
 	while (cup.hasChildNodes()) {
+		//remove first child from cup
   		cup.removeChild(cup.firstChild);
 	}
 	resetResult();
@@ -78,19 +80,23 @@ document.getElementById("reset").onclick = function () {
 
 //confirm action
 document.getElementById("confirm").onclick = function () {
+	//display result div
 	result.style.display = "flex";
+	//check if beverage contains infusion
  	if (beverage.infusion.amount > 0) {
  		result.innerText += beverage.infusion.type + ": " + beverage.infusion.amount  + " gr,";
  	 }
+ 	 //check if beverage contains watter
  	 if (beverage.watter.amount > 0) {
  	  	result.innerText += "watter: " +  beverage.watter.amount + " ml,";
  	 }
+ 	 //check if beverage contains milk
  	 if (beverage.milk.amount > 0) {
  		result.innerText += "milk: " + beverage.milk.amount + " ml";
  	 }
 }
 
-//reset result
+//reset result div
 function resetResult() {
 	result.innerText = "";
 	result.style.display = "none";
@@ -129,6 +135,15 @@ function addInfusion(what, color, amount) {
 	beverage.infusion.amount = amount;
 }
 
+//check if checkbox was activated
+function customBeverageConfirmed() {
+	if (checkInput.value === "false") {
+		numInput.style.display = 'block';
+		add.style.display = 'flex';
+		numInput.setAttribute('placeholder', 'amount of ' + pointer);
+	}
+}
+
 //watter
 function addWatter() {
 	resetResult();
@@ -153,11 +168,7 @@ function addWatter() {
 		beverage.watter.amount = beverage.milk.amount;
 		beverage.milk.amount = 0;
 	}	
-	if (checkInput.value === "false") {
-		numInput.style.display = 'block';
-		add.style.display = 'flex';
-		numInput.setAttribute('placeholder', 'amount of ' + pointer);
-	}
+	customBeverageConfirmed();
 	liquid.style.color = "#003399";
 }
 
@@ -167,11 +178,7 @@ function addChocolate() {
 	addInfusion('chocolate', '#552b00', defaultInfusion);
 	addMilk();
 	pointer = "chocolate";
-	if (checkInput.value === "false") {
-		numInput.style.display = 'block';
-		add.style.display = 'flex';
-		numInput.setAttribute('placeholder', 'amount of ' + pointer);
-	}
+	customBeverageConfirmed();
 	resetResult();
 }
 
@@ -180,11 +187,7 @@ function addCoffee() {
 	addInfusion("coffee", '#6f4e37', defaultInfusion);
 	addWatter();
 	pointer = "coffee";
-	if (checkInput.value === "false") {
-		numInput.style.display = 'block';
-		add.style.display = 'flex';
-		numInput.setAttribute('placeholder', 'amount of ' + pointer);
-	}
+	customBeverageConfirmed();
 	resetResult();
 }
 
@@ -193,11 +196,7 @@ function addBlkTea() {
 	addInfusion("black tea", '#6f3758', defaultInfusion);
 	addWatter();
 	pointer = "black tea";
-	if (checkInput.value === "false") {
-		numInput.style.display = 'block';
-		add.style.display = 'flex';
-		numInput.setAttribute('placeholder', 'amount of ' + pointer);
-	}
+	customBeverageConfirmed();
 	resetResult();
 }
 
@@ -206,11 +205,7 @@ function addGrnTea() {
 	addInfusion("green tea", '#586f37', defaultInfusion);
 	addWatter();
 	pointer = "green tea";
-	if (checkInput.value === "false") {
-		numInput.style.display = 'block';
-		add.style.display = 'flex';
-		numInput.setAttribute('placeholder', 'amount of ' + pointer);
-	}
+	customBeverageConfirmed();
 	resetResult();
 }
 
@@ -219,11 +214,7 @@ function addMilk() {
 	resetResult();
 	const text = 'milk';
 		pointer = text;
-		if (checkInput.value === "false") {
-			numInput.style.display = 'block';
-			add.style.display = 'flex';
-			numInput.setAttribute('placeholder', 'amount of ' + pointer);
-		}
+		customBeverageConfirmed();
 		var liquid = document.getElementById('liquid');
 		//check if milk already was added
 		if (!elementWithIdNotExists('milkIngredient')) {
@@ -234,6 +225,7 @@ function addMilk() {
 		if (liquid !== null) {
 		//check if it is watter
 		if (beverage.watter.amount > 0) {
+			//create div milkIngredient
 			var milk = document.createElement("div");
 			var attr = milk.setAttribute("id", 'milkIngredient');
 			milk.innerText = text;
@@ -252,6 +244,7 @@ function addMilk() {
 		} else {
 		//if all liquids have 0 values
 		if ((beverage.watter.amount === 0 && beverage.milk.amount === 0)) {
+			//create div liqiud - milk
 			var milk = document.createElement("div");
 			var attr = milk.setAttribute("id", 'liquid');
 			milk.innerText = text;
